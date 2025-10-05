@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <rect width="32" height="32" fill="#000000"/>
+  <rect x="2" y="2" width="28" height="28" fill="none" stroke="#66bb66" stroke-width="1"/>
+  
+  <!-- Terminal cursor -->
+  <rect x="4" y="4" width="6" height="2" fill="#b7f4b7"/>
+  <rect x="12" y="4" width="2" height="2" fill="#66bb66"/>
+  
+  <!-- Matrix-style characters -->
+  <text x="4" y="12" font-family="monospace" font-size="3" fill="#66bb66">RUG</text>
+  <text x="4" y="18" font-family="monospace" font-size="3" fill="#b7f4b7">CHK</text>
+  <text x="4" y="24" font-family="monospace" font-size="2" fill="#66bb66">3000</text>
+  
+  <!-- Terminal effect dots -->
+  <circle cx="26" cy="6" r="1" fill="#66bb66" opacity="0.7"/>
+  <circle cx="26" cy="10" r="1" fill="#b7f4b7" opacity="0.5"/>
+  <circle cx="26" cy="14" r="1" fill="#66bb66" opacity="0.8"/>
+</svg>

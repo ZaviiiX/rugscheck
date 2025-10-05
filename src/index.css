@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+/* Full-screen canvas */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Matrix/Linux terminal look */
+:root {
+  --term-bg: #000000;
+  --term-fg: #66bb66;  /* fosfor zelena */
+  --term-dim: #66bb66;
+}
+
+body {
+  background: var(--term-bg);
+  color: var(--term-fg);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+input, textarea { caret-color: var(--term-fg); }
+
+/* Subtilne CRT linije */
+.crt {
+  position: relative;
+  background: var(--term-bg);
+  color: var(--term-fg);
+  text-shadow: 0 0 2px rgba(102, 255, 102, 0.2);
+}
+.crt::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.05), rgba(255,255,255,0.05) 1px,
+      transparent 1px, transparent 3px
+    );
+  mix-blend-mode: overlay;
+  opacity: .2;
+}
+
+/* Blagi flicker */
+@keyframes crt-flicker {
+  0% { opacity: .98; }
+  50% { opacity: 1; }
+  100% { opacity: .97; }
+}
+.crt { animation: crt-flicker 3s infinite; }
+
+/* Custom scrollbar - Matrix theme */
+#terminal-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+#terminal-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+#terminal-scroll::-webkit-scrollbar-thumb {
+  background: var(--term-dim);
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+#terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--term-fg);
+  box-shadow: 0 0 4px rgba(102, 255, 102, 0.3);
+}
+
+/* Firefox scrollbar */
+#terminal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--term-dim) rgba(0, 0, 0, 0.3);
+}
+
+/* Contract address copy button glow effect */
+.copy-btn-glow {
+  position: relative;
+}
+
+.copy-btn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(45deg, transparent, rgba(102, 255, 102, 0.2), transparent);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.copy-btn-glow:hover::before {
+  opacity: 1;
+}
+
+/* Mobile optimizations for terminal text */
+@media (max-width: 640px) {
+  /* Smaller line height for mobile */
+  #terminal-scroll {
+    line-height: 1.2;
+  }
+  
+  /* Better text wrapping for ASCII art */
+  #terminal-scroll pre {
+    white-space: pre-wrap;
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  
+  /* Ensure ASCII banners don't overflow */
+  #terminal-scroll .whitespace-pre-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    font-size: 0.7rem;
+  }
+}
+
+/* Very small screens additional optimizations */
+@media (max-width: 400px) {
+  #terminal-scroll .whitespace-pre-wrap {
+    font-size: 0.6rem;
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <rect width="16" height="16" fill="#000000"/>
+  <rect x="1" y="1" width="14" height="14" fill="none" stroke="#66bb66" stroke-width="0.5"/>
+  
+  <!-- Simplified terminal look -->
+  <rect x="2" y="2" width="3" height="1" fill="#b7f4b7"/>
+  <rect x="6" y="2" width="1" height="1" fill="#66bb66"/>
+  
+  <!-- RUG text -->
+  <text x="2" y="7" font-family="monospace" font-size="2" fill="#66bb66">RUG</text>
+  <text x="2" y="10" font-family="monospace" font-size="2" fill="#b7f4b7">CHK</text>
+  <text x="2" y="13" font-family="monospace" font-size="1.5" fill="#66bb66">3K</text>
+  
+  <!-- Small dots -->
+  <circle cx="13" cy="3" r="0.5" fill="#66bb66"/>
+  <circle cx="13" cy="6" r="0.5" fill="#b7f4b7"/>
+</svg>
