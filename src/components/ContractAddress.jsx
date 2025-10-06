@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 export default function ContractAddress() {
   // Pravi CA address
-  const contractAddress = "G4BMBhSrfxQFj3Z28aAknCG8fGLeEq2GejosCyg2FfgE";
+  const contractAddress = "5x4Xf7J8PHYXnTvnsPLhFhoaSLYRpyv6mHoiZ5jFRLp1";
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
